@@ -12,9 +12,17 @@
 // Create a do-while loop that starts at 2, 
 // and displays the result $a * $a on each line while $a is less than 1,000,000. Output should equal:
 
-$a = 0;
+// $a = 0;
+
+// do {
+//     echo "$a\n";
+//     $a += 2;
+// } while ($a <=100);
+
+$a = 100;
 
 do {
     echo "$a\n";
-    $a += 2;
-} while ($a <=100);
+    $a -= 5;
+} while ($a >=-10);
+
