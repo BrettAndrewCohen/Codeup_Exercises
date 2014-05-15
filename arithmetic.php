@@ -1,36 +1,67 @@
 <?php
 
-// Fill in the // Add code here blocks to make each function echo the proper result.
+// Commit your changes for each step and push to GitHub.
 
-// Add code after functions that calls each function with real numbers.
+// Validate all the arguments, and display an error if the input is not numeric. DONE
 
-// Verify the output of each test.
+// Validate divide by 0 errors, display error if attempts to divide by 0 are made.
 
-// Add a function modulus that finds the modulus of 2 numbers.
+// Make the error messages show the values of the arguments. DONE
 
-// Add test code and verify the output of modulus.
+// Refactor the error messages into their own function, have the other functions use it for error messaging.
 
 function add($a, $b) {
-    echo $a + $b . PHP_EOL;
+	if (is_numeric($a) && is_numeric($b)) {
+        echo $a + $b;
+    } else {
+        echo "ERROR: Both $a and $b must be numbers. Yo!";
+    }
+   echo PHP_EOL; 
 }
 
 function subtract($a, $b) {
-    echo $a - $b . PHP_EOL;
+	if (is_numeric($a) && is_numeric($b)) {
+		echo $a - $b;
+	} else {
+		echo "ERROR: Both $a and $b must be numbers. Yo!";
+	}
+   echo PHP_EOL;
 }
 
 function multiply($a, $b) {
-    echo $a * $b . PHP_EOL;
+    if (is_numeric($a) && is_numeric($b)) {
+		echo $a * $b;
+	} else {
+		echo "ERROR: Both $a and $b must be numbers. Yo!";
+	}
+   echo PHP_EOL;
 }
 
 function divide($a, $b) {
-    echo $a / $b . PHP_EOL;
+if (is_numeric($b) && $b == 0){
+	echo "You can't divide by zero, Yo!";
+} else {
+    if (is_numeric($a) && is_numeric($b)) {
+		echo $a / $b;
+	} else {
+		echo "ERROR: Both $a and $b must be numbers. Yo!";
+	}
+}
+	echo PHP_EOL;
 }
 
-funtion modulus($a, $b) {
-	echo $a % $b . PHP_EOL;
+function modulus($a, $b) {
+	if (is_numeric($a) && is_numeric($b)) {
+		echo $a % $b;
+	} else {
+		echo "ERROR: Both $a and $b must be numbers. Yo!";
+	}
+   echo PHP_EOL;
 }
-add(10,2);
-subtract(10,2);
-multiply(10,2);
-divide(10,2);
-modulus(10,2);
+
+// add(10,2);
+// subtract(10,2);
+// multiply(10,2);
+divide(10,test);
+// modulus(10,2);
+
