@@ -5,34 +5,38 @@
     // aces count as 11 unless you are over 21 and then they count as 1
     // K, Q, and J count as 10
     // numeric cards count as their value
+    // May need to unset aces if the total is over 21 and it's looped towards the end. 
 
-$hand = array('A-H', '5-D', 'K-C', 'A-S', '4-H');
+$hand = array('5-H', '6-D', 'K-C', '2-S', '2-H');
 
 function getTotal($hand) {
     $total = 0;
 
+    // Loop through the array and return the values. 
     foreach ($hand as $cards) {
+        // Explode will return an array of strings. Pull the "card" from index 0 of the new arrays. 
        explode('-', $cards);
-       // now card's index value of 0 is equal to each cards value.. 
-       // BUT ONLY THE FIRST NUMBER IF IT'S DOUBLE DIGIT? 
-            if ($cards[0] == A && $total < 21) {
-                $cards[0] = intval(11);
+
+            if ($cards[0] == A && $total <= 21) {
+                $cards = 11;
             }
-            elseif ($cards[0] == A && $toatal > 21) {
-                $cards[0] = intval(1);
+            elseif ($cards[0] == A && $toatal >= 21) {
+                $cards = 1;
             }
             elseif ($cards[0] == J) {
-                 $cards[0] = intval(10);
+                 $cards = "10";
             }
             elseif ($cards[0] == Q) {
-                $cards[0] = intval(10);
+                $cards = "10";
             }
             elseif ($cards[0] == K) {
-                $cards[0] = intval(10);
+                $cards = "10";
+                var_dump($cards);
+
             }
         //This is where the string becomes an integer. 
-        $cards = (intval($cards[0]));
-
+        $cards = (intval($cards));
+        var_dump($cards);
         $total = $total + $cards;
         
     }
