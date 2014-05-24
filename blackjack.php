@@ -1,6 +1,6 @@
 <?php
 
-$hand = array('A-H', '2-D', 'K-C', '2-S', 'A-H');
+$hand = array('A-H', 'A-D', 'A-C', 'A-S', 'A-H');
 
 function acecount($hand){
     $acecount = 0;
@@ -21,13 +21,8 @@ function getTotal($hand) {
         // Explode will return an array of strings. Pull the "card" from index 0 of the new arrays. 
         // Ben suggest that we assign $cards = explode('-', $cards);
        explode('-', $cards);
-            if (($cards[0] == 'A') && ($total <= 21)) {
+            if ($cards[0] == 'A') {
                 $cards = "11";
-                // var_dump($cards);
-            }
-            elseif (($cards[0] == 'A') && ($toatal != 21)) {
-                $cards = "1";
-                // var_dump($cards);
             }
             elseif ($cards[0] == 'J' || $cards[0] == 'Q' || $cards[0] == 'K') {
                 $cards = "10";
