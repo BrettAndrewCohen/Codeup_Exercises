@@ -1,13 +1,17 @@
 <?php
 
-    // GOAL: loop through hand and calculate total value
-    // use "explode" function to separate card suit and value
-    // aces count as 11 unless you are over 21 and then they count as 1
-    // K, Q, and J count as 10
-    // numeric cards count as their value
-    // May need to unset aces if the total is over 21 and it's looped towards the end. 
+$hand = array('A-H', '2-D', 'K-C', '2-S', 'A-H');
 
-$hand = array('5-H', '6-D', 'K-C', '2-S', '2-H');
+function acecount($hand){
+    $acecount = 0;
+    foreach ($hand as $cards) {
+        explode('-', $cards);
+        if ($cards[0] == 'A') {
+            $acecount++;
+        }
+    }
+    return $acecount;
+}
 
 function getTotal($hand) {
     $total = 0;
@@ -15,36 +19,51 @@ function getTotal($hand) {
     // Loop through the array and return the values. 
     foreach ($hand as $cards) {
         // Explode will return an array of strings. Pull the "card" from index 0 of the new arrays. 
+        // Ben suggest that we assign $cards = explode('-', $cards);
        explode('-', $cards);
-
-            if ($cards[0] == A && $total <= 21) {
-                $cards = 11;
+            if (($cards[0] == 'A') && ($total <= 21)) {
+                $cards = "11";
+                // var_dump($cards);
             }
-            elseif ($cards[0] == A && $toatal >= 21) {
-                $cards = 1;
+            elseif (($cards[0] == 'A') && ($toatal != 21)) {
+                $cards = "1";
+                // var_dump($cards);
             }
-            elseif ($cards[0] == J) {
-                 $cards = "10";
-            }
-            elseif ($cards[0] == Q) {
+            elseif ($cards[0] == 'J' || $cards[0] == 'Q' || $cards[0] == 'K') {
                 $cards = "10";
-            }
-            elseif ($cards[0] == K) {
-                $cards = "10";
-                var_dump($cards);
-
+                // var_dump($cards);
             }
         //This is where the string becomes an integer. 
         $cards = (intval($cards));
-        var_dump($cards);
         $total = $total + $cards;
-        
+        $acecount = acecount($hand);
+        while ($total > 21 && $acecount >0) {
+            $total -= 10;
+            $acecount--;
+
+        }
+   
     }
 
     return $total;
 }
 
 echo getTotal($hand) . PHP_EOL;
+
+// What ben did... 
+
+
+// $cardValue = getcardvalue($card[0]);
+// if ($cardvalue == 11) {
+//     $acecount++; 
+// }
+// $total += $cardValue
+
+// while ($total > 21 && $acecount >0) {
+//     $total -= 10;
+//     $acecount--;
+
+// }
 
 //What I get back when I explode the $hand array. Smaller arrays with strings
 
