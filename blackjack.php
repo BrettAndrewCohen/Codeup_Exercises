@@ -1,6 +1,6 @@
 <?php
 
-$hand = array('A-H', 'A-D', 'A-C', 'A-S', 'A-H');
+$hand = array('A-H', '2-D', '3-C', 'A-S', 'A-H');
 
 function acecount($hand){
     $acecount = 0;
@@ -31,14 +31,14 @@ function getTotal($hand) {
         //This is where the string becomes an integer. 
         $cards = (intval($cards));
         $total = $total + $cards;
-        $acecount = acecount($hand);
+   
+    }
+    $acecount = acecount($hand);
         while ($total > 21 && $acecount >0) {
             $total -= 10;
             $acecount--;
 
         }
-   
-    }
 
     return $total;
 }
