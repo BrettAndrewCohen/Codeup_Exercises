@@ -1,4 +1,9 @@
 <?php
+// The application should run on command line, should prompt users to add new items,
+// allow them to add text items, and the ability to remove completed items.
+
+// After each action, it should display the TODO list and the menu.
+
 
 
 // Test and verify the results before proceeding by creating a matching if block. 
@@ -34,4 +39,31 @@ switch($day_of_week) {
     	echo "Sunday" . PHP_EOL;
     	break;
 }
+
+if ($day_of_week == 1) {
+	echo "Monday";
+}
+elseif ($day_of_week == 2) {
+	echo "Tuesday";
+}
+elseif ($day_of_week == 3) {
+	echo "Wednesday";
+}
+elseif ($day_of_week == 4) {
+	echo "Thursday";
+}
+elseif ($day_of_week == 5) {
+	echo "Friday";
+}
+elseif ($day_of_week == 6) {
+	echo "Saturday";
+}
+elseif ($day_of_week == 7) {
+	echo "Sunday";
+}
+echo PHP_EOL;
+
+
+
+
 

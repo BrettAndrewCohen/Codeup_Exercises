@@ -28,9 +28,21 @@ $books = array(
     )
 );
 
+//This loops through the multi-dimensional array and echos out all of the books titles and information. Better way to do it. 
+
+// foreach ($books as $book => $properties){
+//     echo $book. PHP_EOL;
+//     foreach ($properties as $property => $value) {
+//         echo "{$property} : {$value}" . PHP_EOL;
+//     }
+// }
+
 foreach($books as $title => $book){
+	if($book['published'] > 1950 && isset($book['published'])){
 	echo "The book title is $title which was published in $book[published] and the author is $book[author]. This book has $book[pages] pages" . PHP_EOL;
+    }
 };
+
 
 
 // 	foreach($book as $information => $details){

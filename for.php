@@ -36,6 +36,11 @@ if ($increment == 0){
 	$increment = 1;
 }
 
-for($a = $staring_number; $a <= $ending_number; $a += $increment) {
+if($starting_number < $ending_number){
+	for($a = $starting_number; $a <= $ending_number; $a += $increment) {
 	echo "$a" . PHP_EOL;
+}
+} else {
+	for($a = $starting_number; $a >= $ending_number; $a -= $increment) {
+	echo "$a" . PHP_EOL;}
 }

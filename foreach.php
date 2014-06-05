@@ -11,9 +11,9 @@
 
 $things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, (string) 11);
 
-foreach($things as $thing){
-	echo "{$thing}" . PHP_EOL;
-}
+// foreach($things as $thing){
+// 	echo "{$thing}" . PHP_EOL;
+// }
 
 // foreach($things as $thing) {
 // 	if(is_scalar($thing)){
@@ -21,24 +21,24 @@ foreach($things as $thing){
 // 	}
 // }
 
-// foreach ($things as $thing){
-// 	if(is_int($thing)){
-// 		echo "{$thing} is an Integer" . PHP_EOL;
-// 	}
-// 	elseif(is_float($thing)){
-// 		echo "{$thing} is a Float" . PHP_EOL;
-// 	}
-// 	elseif(is_bool($thing)){
-// 		echo "{$thing} is a Boolean" . PHP_EOL;
-// 	}
-// 	elseif(is_array($thing)){
-// 		print_r ($thing);
-// 	}
-// 	elseif(is_null($thing)){
-// 		echo "{$thing} is Null" . PHP_EOL;
-// 	}
-// 	elseif(is_string($thing)){
-// 		echo "{$thing} is a String" . PHP_EOL;
-// 	}
-// }
+foreach ($things as $thing){
+	if(is_int($thing)){
+		echo "{$thing} is an Integer" . PHP_EOL;
+	}
+	elseif(is_float($thing)){
+		echo "{$thing} is a Float" . PHP_EOL;
+	}
+	elseif(is_bool($thing)){
+		echo "{$thing} is a Boolean" . PHP_EOL;
+	}
+	elseif(is_array($thing)){
+		print_r ($thing);
+	}
+	elseif(is_null($thing)){
+		echo "{$thing} is Null" . PHP_EOL;
+	}
+	elseif(is_string($thing)){
+		echo "{$thing} is a String" . PHP_EOL;
+	}
+}
 
